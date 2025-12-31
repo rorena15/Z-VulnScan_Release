@@ -119,8 +119,8 @@
 ## 🛠 Technology Stack
 
 - **Language:** Python 3.13+
-- **GUI Framework:** PyQt5 (Qt Designer)
-- **Network Engine:** Scapy, Python Native Socket
+- **GUI Framework:** PySide6
+- **Network Engine:** Python Native Socket
 - **Reporting Engine:** ReportLab (PDF), OpenPyXL (Excel)
 - **Security:** `keyring` (Secure Storage), PyInstaller (Build)
 
