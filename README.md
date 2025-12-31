@@ -1,11 +1,13 @@
 # Z-VulnScan Professional Edition
 ### 🛡️ Network Asset Discovery & Security Visibility Tool
 
-![Version](https://img.shields.io/badge/Version-v2.2.0_Professional-blue?style=flat-square) ![Python](https://img.shields.io/badge/Python-3.13+-3776AB?style=flat-square&logo=python&logoColor=white) ![Platform](https://img.shields.io/badge/Platform-Windows_%7C_Linux-lightgrey?style=flat-square) ![License](https://img.shields.io/badge/License-Proprietary-red?style=flat-square)
+![Version](https://img.shields.io/badge/Version-v2.2.0_Professional-blue?style=flat-square) ![Python](https://img.shields.io/badge/Python-3.13+-3776AB?style=flat-square&logo=python&logoColor=white) ![GUI](https://img.shields.io/badge/GUI-PySide6-41CD52?style=flat-square&logo=qt&logoColor=white) ![License](https://img.shields.io/badge/License-Proprietary-red?style=flat-square)
 
 **Z-VulnScan Professional**은 인가된 네트워크 환경에서 **자산 가시화, 포트 노출 현황 파악, 서비스 배너 수집**을 통해 보안 담당자가 **사전 위험 요소를 식별하고 점검 결과를 문서화**할 수 있도록 지원하는 **보안 가시화(Security Visibility) 및 사전 점검 도구**입니다.
 
 본 도구는 **침투 테스트(PT) 또는 공격 도구가 아니며**, 보안 정책 수립, 교육, 내부 점검, 감사 대응을 위한 **보조 수단**으로 설계되었습니다.
+
+> **📢 v2.2.0 업데이트 안내:** > 기존의 Npcap 드라이버 의존성을 제거하고 엔진을 전면 리팩토링하여, **별도 설치 없이 즉시 실행 가능한 Portable 환경**을 지원합니다.
 
 ---
 
@@ -39,7 +41,7 @@
 | ✅ 권장 용도 | ❌ 금지된 용도 |
 |---|---|
 | • 내부 네트워크 **자산 식별 및 현황 파악** | • 침투 테스트 (Exploit 기반 공격) |
-| • 서버/서비스 **노출 포트 및 배너 점검** | • 무차별 외부 네트워크 스캔 (Scanning) |
+| • 서버/서비스 **노출 포트 및 배너 점검** | • 무차별 외부 네트워크 스캔 (Mass Scanning) |
 | • 보안 감사 전 **사전 점검(Pre-audit Checklist)** | • 서비스 거부 공격 (DoS) 시뮬레이션 |
 | • 보안 교육 및 실습 환경 구축 | • 타인 소유 자산에 대한 비인가 접근 |
 | • 점검 결과 **보고서(PDF/Excel) 자동화** | |
@@ -49,15 +51,15 @@
 ## 🚀 Key Features
 
 ### 1. 📡 Network Asset Discovery
-- **ICMP Ping:** 활성 호스트의 신속한 생존 여부 탐지
-- **ARP Scan:** 내부 네트워크 대역(L2)의 정밀한 자산 식별
-- 인가된 로컬 네트워크 환경에 최적화된 스캔 엔진
+- **Native Ping Sweep:** OS 내장 명령어를 활용한 빠르고 안정적인 생존 호스트 탐지
+- **OS Fingerprinting:** TTL 분석을 통한 Windows/Linux 운영체제 추정
+- **Dependency Free:** Npcap/WinPcap 등 별도 패킷 드라이버 설치 불필요
 
 ### 2. 🔍 Port Exposure Scanning
 - **Fast Scan:** 주요 Well-known 포트(Top 100) 빠른 점검
 - **Full Scan:** 전체 포트(1-65535) 대상 정밀 노출 현황 분석
 - **Custom Scan:** 사용자 정의 포트 범위 지정 가능
-- **Scan Mode:** TCP Connect / TCP SYN Scan 모드 지원 (*관리자 권한 필요*)
+- **Scan Mode:** **High-Performance TCP Connect Scan** (Multi-threaded Architecture)
 
 ### 3. 🏷️ Service Banner Collection
 - 서비스 데몬의 배너 정보 수집 및 분석
@@ -70,8 +72,8 @@
 - **Visual Alert:** 취약/경고 항목에 대한 시각적 강조 처리
 
 ### 5. 💻 Modern GUI Dashboard
-- **PyQt5 기반 다크 모드 UI:** 장시간 분석 업무에 최적화
-- **Real-time Status:** 진행률(Progress Bar), 남은 시간(ETA), 실시간 로그 콘솔 제공
+- **PySide6 기반 다크 모드 UI:** 고해상도(HiDPI) 지원 및 현대적인 디자인
+- **User Experience:** 콘솔(CMD) 팝업 차단, 실시간 로그 모니터링
 - **Input Validation:** IP/Port 입력값 검증 및 오동작 방지 로직 적용
 
 ---
@@ -79,14 +81,15 @@
 본 소프트웨어는 상용(Proprietary) 라이선스를 따르며, GitHub Releases 페이지를 통해 배포됩니다.
 
 * **최신 버전:** V2.2.0 (Professional Edition Stable)
-* **시스템 요구사항:** Windows 10/11/Server (64-bit), 관리자 권한 필수
+* **시스템 요구사항:** Windows 10/11/Server (64-bit)
+* **설치 방법:** 별도의 설치 과정 없이 다운로드 후 즉시 실행 (Portable)
 * **[다운로드 링크]** https://github.com/rorena15/Z-VulnScan_Release/releases/tag/V2.2.0_Alpha(Stable)
 
 ---
 
 ## ✅ Supported Audit List (KISA)
 
-> ℹ **[참고]** 아래 항목은 대상 자산에 대한 **SSH/WinRM 인증 정보**가 제공된 경우 정밀 진단됩니다. v2.1에서 진단 항목이 대폭 확장되었습니다.
+> ℹ **[참고]** 아래 항목은 대상 자산에 대한 **SSH/WinRM 인증 정보**가 제공된 경우 정밀 진단됩니다.
 
 ### 🐧 Linux Server (Unix 계열) - 70+ Items
 | 코드 | 항목명 | 주요 점검 내용 |
@@ -108,7 +111,7 @@
 
 ## 📸 Screenshots
 
-| **Main Dashboard & Context Menu** | **Security Warning** |
+| **Main Dashboard (Dark Mode)** | **Security Warning** |
 |:---:|:---:|
 | <img src="dashboard.png" width="400" alt="Main GUI"> | <img src="Warnning.png" width="400" alt="Warning GUI"> |
 | **PDF Report (Remediation Included)** | **Excel Report** |
@@ -119,8 +122,8 @@
 ## 🛠 Technology Stack
 
 - **Language:** Python 3.13+
-- **GUI Framework:** PySide6
-- **Network Engine:** Python Native Socket
+- **GUI Framework:** **PySide6** (Modern LGPL Framework)
+- **Network Engine:** **Python Native Socket & OS Command** (Dependency Free)
 - **Reporting Engine:** ReportLab (PDF), OpenPyXL (Excel)
 - **Security:** `keyring` (Secure Storage), PyInstaller (Build)
 
@@ -128,13 +131,13 @@
 
 ## 🗓 Roadmap
 
-### ✅ v2.1 (Current - Professional)
-- [x] **Core:** 자산 탐지, 멀티 모드 포트 스캔, KISA 정밀 진단
-- [x] **Security:** 자격증명 암호화 저장, 메모리 보호, 사용자 실수 방지 경고
-- [x] **UX:** 컨텍스트 메뉴(RDP/SSH), 다크 모드 UI, 실시간 로그
-- [x] **Reporting:** 조치 방안(Remediation)이 포함된 PDF/Excel 리포트
+### ✅ v2.2.0 (Stable)
+- [x] **Optimization:** Scapy 제거 및 Native Engine 탑재 (Npcap 불필요)
+- [x] **Performance:** 멀티스레드 기반 고속 스캔 엔진 적용
+- [x] **Legal:** PySide6 마이그레이션 및 라이선스 준수
+- [x] **UX:** 다크 모드 GUI 개선 및 터미널 팝업 제거
 
-### 🔮 v3.0 (Future - Enterprise)
+### 🔮 v3.0 (Enterprise Plan)
 - [ ] **Headless Mode:** CLI 지원을 통한 스케줄러(Cron) 연동 및 자동화
 - [ ] **SIEM Integration:** Syslog/CEF 포맷 로그 전송 기능
 - [ ] **Centralized DB:** 로컬 SQLite를 넘어 MySQL/PostgreSQL 중앙 저장소 연동
@@ -149,3 +152,5 @@
 Copyright © 2025 **Z-VulnScan Team**. All Rights Reserved.
 
 본 소프트웨어는 **상용/비공개 소프트웨어**입니다. 저작권자의 사전 서면 허가 없이 본 소프트웨어의 전부 또는 일부를 무단으로 복제, 배포, 수정, 역공학(Reverse Engineering)하는 행위는 엄격히 금지됩니다.
+
+*Built with open-source components: PySide6 (LGPL), Paramiko (LGPL), OpenPyXL (MIT).*
