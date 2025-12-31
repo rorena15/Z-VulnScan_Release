@@ -1,7 +1,7 @@
-# Z-VulnScan Professional Edition v2.1
+# Z-VulnScan Professional Edition
 ### 🛡️ Network Asset Discovery & Security Visibility Tool
 
-![Version](https://img.shields.io/badge/Version-v2.1_Professional-blue?style=flat-square) ![Python](https://img.shields.io/badge/Python-3.13+-3776AB?style=flat-square&logo=python&logoColor=white) ![Platform](https://img.shields.io/badge/Platform-Windows_%7C_Linux-lightgrey?style=flat-square) ![License](https://img.shields.io/badge/License-Proprietary-red?style=flat-square)
+![Version](https://img.shields.io/badge/Version-v2.2.0_Professional-blue?style=flat-square) ![Python](https://img.shields.io/badge/Python-3.13+-3776AB?style=flat-square&logo=python&logoColor=white) ![Platform](https://img.shields.io/badge/Platform-Windows_%7C_Linux-lightgrey?style=flat-square) ![License](https://img.shields.io/badge/License-Proprietary-red?style=flat-square)
 
 **Z-VulnScan Professional**은 인가된 네트워크 환경에서 **자산 가시화, 포트 노출 현황 파악, 서비스 배너 수집**을 통해 보안 담당자가 **사전 위험 요소를 식별하고 점검 결과를 문서화**할 수 있도록 지원하는 **보안 가시화(Security Visibility) 및 사전 점검 도구**입니다.
 
