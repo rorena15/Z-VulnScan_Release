@@ -78,9 +78,9 @@
 ### 📥 Download & Installation
 본 소프트웨어는 상용(Proprietary) 라이선스를 따르며, GitHub Releases 페이지를 통해 배포됩니다.
 
-* **최신 버전:** V2.1.0 (Professional Edition)
+* **최신 버전:** V2.2.0 (Professional Edition Stable)
 * **시스템 요구사항:** Windows 10/11/Server (64-bit), 관리자 권한 필수
-* **[다운로드 링크]** https://github.com/rorena15/Z-VulnScan_Release/releases/tag/V2.1.0_Alpha
+* **[다운로드 링크]** https://github.com/rorena15/Z-VulnScan_Release/releases/tag/V2.2.0_Alpha(Stable)
 
 ---
 
