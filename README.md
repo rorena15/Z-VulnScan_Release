@@ -75,6 +75,14 @@
 - **Input Validation:** IP/Port 입력값 검증 및 오동작 방지 로직 적용
 
 ---
+### 📥 Download & Installation
+본 소프트웨어는 상용(Proprietary) 라이선스를 따르며, GitHub Releases 페이지를 통해 배포됩니다.
+
+* **최신 버전:** V2.1.0 (Professional Edition)
+* **시스템 요구사항:** Windows 10/11/Server (64-bit), 관리자 권한 필수
+* **[다운로드 링크]** https://github.com/rorena15/Z-VulnScan_Release/releases/download/V2.1.0_Alpha/Z-VulnScan_Professional_Edition_v2.1_Alpha.zip
+
+---
 
 ## ✅ Supported Audit List (KISA)
 
